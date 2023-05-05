@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/routes"
+    app:startDestination="@+id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.example.notes.HomeFragment"
+        android:label="Notes"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_noteFragment"
+            app:destination="@id/NoteFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim"/>
+    </fragment>
+    <fragment
+        android:id="@+id/NoteFragment"
+        android:name="com.example.notes.NoteFragment"
+        android:label="Note"
+        tools:layout="@layout/fragment_note">
+        <argument
+            android:name="updateNote"
+            android:defaultValue="@null"
+            app:argType="com.example.notes.database.Notes"
+            app:nullable="true" />
+    </fragment>
+
+</navigation>
